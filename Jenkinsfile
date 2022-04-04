@@ -1,7 +1,6 @@
 pipeline {
   environment {
-    imagename = "yenigul/hacicenkins"
-    registryCredential = 'yenigul-dockerhub'
+    imagename = "python:3-slim-buster"
     dockerImage = ''
   }
   agent any
