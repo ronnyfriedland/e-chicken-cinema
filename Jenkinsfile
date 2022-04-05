@@ -21,7 +21,7 @@ pipeline {
     stage('Deploy Image') {
       steps{
         script {
-          docker.withRegistry( '', registryCredential ) {
+          docker.withRegistry( 'http://192.168.8.10:5000' ) {
             dockerImage.push("$BUILD_NUMBER")
              dockerImage.push('latest')
 
