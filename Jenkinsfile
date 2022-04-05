@@ -1,6 +1,6 @@
 pipeline {
   environment {
-    imagename = "python:3-slim-buster"
+    imagename = "e-chicken-cinema"
     dockerImage = ''
   }
   agent any
