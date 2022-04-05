@@ -1,4 +1,4 @@
-FROM arm32v7/python
+FROM python:3-slim-buster
 
 EXPOSE 8000
 
