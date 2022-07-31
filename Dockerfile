@@ -1,4 +1,4 @@
-FROM python:3-slim-buster
+FROM arm32v7/python:3.7-slim-bullseye
 
 EXPOSE 8000
 
