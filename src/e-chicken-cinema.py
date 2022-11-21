@@ -35,8 +35,8 @@ class StreamingHandler(server.BaseHTTPRequestHandler):
             self.handleRoot()
         elif self.path == '/index.html':
             self.handleIndex()
-        elif self.path == '/bootstrap.css':
-            self.handleCss()
+        elif self.path == '/bootstrap.min.css' or self.path == '/bootstrap.min.css.map':
+            self.handleCss(self.path)
         elif self.path == '/stream.mjpg':
             self.handleStream(output)
         else:
@@ -76,8 +76,8 @@ class StreamingHandler(server.BaseHTTPRequestHandler):
         self.end_headers()
         self.wfile.write(content)
 
-    def handleCss(self):
-        with open ("html/bootstrap.min.css", "r") as cssFile:
+    def handleCss(self, file):
+        with open ("html/" + file, "r") as cssFile:
             content=cssFile.read()
             content=content.encode("utf-8")
         self.send_response(200)
